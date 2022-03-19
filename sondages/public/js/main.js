@@ -161,11 +161,8 @@ function start() {
         video.play().then();
     }
 
-    if (video.readyState === 4) {
-        startVideo();
-    } else {
-        video.addEventListener('canplaythrough', startVideo);
-    }
+    video.addEventListener('canplaythrough', startVideo);
+
 
     video.addEventListener('ended', _ => {
         window.scrollTo(0, 1);
